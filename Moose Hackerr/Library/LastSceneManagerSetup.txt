@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_scenes/room1.unity
+- path: Assets/_scenes/hack.unity
   isLoaded: 1
   isActive: 1
