@@ -7,6 +7,7 @@ public class ReloadLevel : MonoBehaviour {
 	public GameObject player;
 	public GameObject table;
     public Text activation;
+    public static bool hackStarted = false;
     private bool activated = false;
     private Vector3 pos1 = new Vector3 (0, 100, 0);
     private Vector3 origin = new Vector3 (0, 0, 0);
@@ -33,6 +34,11 @@ public class ReloadLevel : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R))
         {
             activated = false;
+	        hackStarted = false;
+
+	    if (!hackStarted)
+	        Debug.Log("hackStarted is false");
+             
             player.transform.position = origin;
             player.transform.rotation = Quaternion.identity;
         }
@@ -44,6 +50,10 @@ public class ReloadLevel : MonoBehaviour {
             {
                 activated = true;
                 player.transform.position = pos1;
+                hackStarted = true;
+
+		if (hackStarted)
+		    Debug.Log("hackStarted is true");
             }
         }
         else
